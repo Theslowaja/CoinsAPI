@@ -2,7 +2,7 @@
 
 namespace Theslowaja\Coins;
 
-use pocketmine\Player;
+use pocketmine\player\Player;
 use pocketmine\Server;
 
 use pocketmine\plugin\PluginBase;
