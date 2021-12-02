@@ -1,4 +1,4 @@
-name: Coins
+name: CoinsAPI
 main: Theslowaja\Coins\Main
 version: 1
 author: Theslowaja
@@ -17,11 +17,11 @@ commands:
 
 permissions:
   coin.command:
-    description: "Allows the user to run the example command"
+    description: "Allows the user to run the coin"
     default: true
   add.command:
-    description: "Allows the user to run the example command"
+    description: "Allows the user to run the addcoin"
     default: true
   reduce.command:
-    description: "Allows the user to run the example command"
+    description: "Allows the user to run the reduce"
     default: true
