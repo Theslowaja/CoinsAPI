@@ -12,10 +12,7 @@ use pocketmine\command\{
     CommandSender
 };
 use pocketmine\event\Listener;
-use pocketmine\event\player\{
-    PlayerJoinEvent,
-    PlayerQuitEvent
-};
+use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\utils\Config;
 
 class Main extends PluginBase implements Listener{
@@ -30,7 +27,7 @@ class Main extends PluginBase implements Listener{
 
     public function onDisable() : void 
     {
-       $this->getLogger()->info("Plugin Coins Is off!!!\Your player coin has saved");
+       $this->getLogger()->info("Plugin Coins Is off!!!\nYour player coin has saved");
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool 
@@ -58,7 +55,16 @@ class Main extends PluginBase implements Listener{
                 }
             break;
             case "reducecoin":
-
+                if(isset($args[0]) && is_numeric($args[1])) {
+                    $coin = new Config($this->getDataFolder()."coins.yml", Config::YAML);      
+                    $n = $args[0];
+                    $p = $coin->get($n);
+                    $coin->set($n, $p - $args[1]);
+                    $coin->save();
+                    $sender->sendMessage("Sucses to reduce ". $args[1] ." coin to ". $args[0]);
+                } else {
+                    $sender->sendMessage("Eror!!!");
+                }
             break;
          }
     return true;
