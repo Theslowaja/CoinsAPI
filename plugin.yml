@@ -1,0 +1,27 @@
+name: Coins
+main: Theslowaja\Coins\Main
+version: 1
+author: Theslowaja
+api: [3.0.0, 4.0.0]
+
+commands:
+  coin:
+    description: "show your coin"
+    permission: coin.command
+  addcoin:
+    description: "add player coin"
+    permission: add.command
+  reducecoin:
+    description: "reduce player coin"
+    permission: reduce.command
+
+permissions:
+  coin.command:
+    description: "Allows the user to run the example command"
+    default: true
+  add.command:
+    description: "Allows the user to run the example command"
+    default: true
+  reduce.command:
+    description: "Allows the user to run the example command"
+    default: true
