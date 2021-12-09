@@ -2,7 +2,7 @@ name: CoinsAPI
 main: Theslowaja\Coins\Main
 version: 1
 author: Theslowaja
-api: [3.0.0, 4.0.0]
+api: 4.0.0
 
 commands:
   coin:
