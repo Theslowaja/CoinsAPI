@@ -19,15 +19,13 @@ class Main extends PluginBase implements Listener{
 
     public function onEnable() : void 
     {
-        @mkdir($this->getDataFolder());
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->pcoins = new Config($this->getDataFolder() . "coins.yml", Config::YAML, array());
         $this->getLogger()->info("Plugin Coins Is On!!!");
     }
 
     public function onDisable() : void 
     {
-       $this->getLogger()->info("Plugin Coins Is off!!!\nYour player coin has saved");
+       $this->getLogger()->info("Plugin Coins Is off!!!");
     }
 
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool 
